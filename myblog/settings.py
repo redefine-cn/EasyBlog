@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
-    'bootstrap_admin',  #一定要放在`django.contrib.admin`前面
+    'bootstrap_admin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,13 +42,13 @@ INSTALLED_APPS = (
 )
 
 from django.conf import global_settings
-TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + [
+TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
     'django.core.context_processors.request',
-]
+)
 BOOTSTRAP_ADMIN_SIDEBAR_MENU = True
 
 MIDDLEWARE_CLASSES = [
-    'django.middleware.security.SecurityMiddleware',
+    #'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -75,7 +75,6 @@ TEMPLATES = [
         },
     },
 ]
-#添加templates路径
 TEMPLATE_PATH=os.path.join(BASE_DIR,'templates')
 TEMPLATE_DIRS=(
     TEMPLATE_PATH,
@@ -87,23 +86,24 @@ WSGI_APPLICATION = 'myblog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
+#DATABASES = {
+    #'default': {
+   #     'ENGINE': 'django.db.backends.sqlite3',
+  #      'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+ #   }
+#}
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'aaa',
+        'USER': 'abcd',
+        'PASSWORD': 'Abcd1234@',
+        'HOST': '192.168.222.171',
+        'PORT': '3306',
     }
 }
 
-#DATABASES = {
-  #  'default': {
-   #     'ENGINE': 'django.db.backends.mysql',
-    #    'NAME': 'Easy_Blog',
-     #   'USER': 'root',
-      #  'PASSWORD': 'nydengni38099',
-       # 'HOST': '10.0.2.15',
-        #'PORT': '3306',
-   # }
-#}
 
 
 # Password validation
