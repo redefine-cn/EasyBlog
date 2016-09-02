@@ -31,8 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
-    'bootstrap_admin',#一定要放在`django.contrib.admin`前面
-    'django.contrib.admin',#默认添加后台管理功能
+    'bootstrap_admin',
+    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -55,7 +55,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.security.SecurityMiddleware',
+    #'django.middleware.security.SecurityMiddleware',
 )
 
 ROOT_URLCONF = 'my_blog.urls'
@@ -92,14 +92,14 @@ WSGI_APPLICATION = 'my_blog.wsgi.application'
 
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.mysql',
-         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        # 'NAME': 'Easy_Blog',
-        #'USER': 'root',
-        #'PASSWORD': 'yanghuilan',
-        #'HOST': '192.168.195.61',
-        #'PORT': '3306',
+         'ENGINE': 'django.db.backends.mysql',
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': 'EasyBlog',
+        'USER': 'yang',
+        'PASSWORD': 'yang941024',
+        'HOST': '192.168.198.242',
+        'PORT': '3306',
     }
 }
 
