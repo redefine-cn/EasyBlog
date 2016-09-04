@@ -42,9 +42,9 @@ INSTALLED_APPS = (
 )
 
 from django.conf import global_settings
-TEMPLATE_CONTEXT_PROCESSORS=global_settings.TEMPLATE_CONTEXT_PROCESSORS+[
+TEMPLATE_CONTEXT_PROCESSORS=global_settings.TEMPLATE_CONTEXT_PROCESSORS+(
     'django.core.context_processors.request',
-]
+)
 BOOTSTRAP_ADMIN_SIDEBAR_MENU=True
 
 MIDDLEWARE_CLASSES = (
@@ -95,10 +95,10 @@ DATABASES = {
          'ENGINE': 'django.db.backends.mysql',
         # 'ENGINE': 'django.db.backends.sqlite3',
         #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'NAME': 'EasyBlog',
-        'USER': 'yang',
-        'PASSWORD': 'yang941024',
-        'HOST': '192.168.198.242',
+        'NAME': 'master',
+        'USER': 'yanghuilan',
+        'PASSWORD': 'yanghuilan',
+        'HOST': '192.168.196.77',
         'PORT': '3306',
     }
 }

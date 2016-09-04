@@ -20,6 +20,11 @@
             <h2 class="brand-tagline">追忆似水年华</h2>
             <nav class="nav">
                 <ul class="nav-list">
+                    <li>
+                        <form class="pure-form" action="/search/" method="get">
+                            <input class="pure-input-3-3" type="text" name="s" placeholder="search">
+                        </form>
+                    </li>
                     <li class="nav-item">
                         <a class="button-success pure-button" href="/">主页</a>
                     </li>
@@ -34,11 +39,6 @@
                     </li>
                     <li class="nav-item">
                         <a class="button-success pure-button" href="/">专题</a>
-                    </li>
-                    <li>
-                        <form class="pure-form" action="/search/" method="get">
-                            <input class="pure-input-3-3" type="text" name="s" placeholder="search">
-                        </form>
                     </li>
                     <li class="nav-item">
                         <a class="button-success pure-button" href="{% url "about_me" %}">About Me</a>
